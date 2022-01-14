@@ -1,2 +1,2 @@
-# MNP-App
-An application built for Michigan Neuroprosthetics. 
+# app-UI
+App interface for Michigan Neuroprosthetics arm- will have bluetooth, settings, profile, etc. 
