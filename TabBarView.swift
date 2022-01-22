@@ -69,7 +69,7 @@ struct TabBarView_Previews: PreviewProvider {
 let tabs = [
     TabStruct(image: "house.fill", label: "Home"),
     TabStruct(image: "person.fill", label: "User"),
-    TabStruct(image: "", label: ""),
+    TabStruct(image: "mic.fill", label: "Microphone"),
     TabStruct(image: "slider.vertical.3", label: "Settings"),
     TabStruct(image: "gear", label: "Analytics")
 ]

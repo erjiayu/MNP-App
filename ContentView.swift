@@ -16,17 +16,20 @@ struct ContentView: View {
 //        UITabBar.appearance().barTintColor = .black
 //    }
     var body: some View {
-        
+                
         //adding views to TabBar
         TabView(selection: $selection) {
             HomeView()
                 .tag(0)
             UserView()
                 .tag(1)
-            SettingsView()
+            MicView()
                 .tag(2)
-            AnalyticsView()
+            SettingsView()
                 .tag(3)
+            AnalyticsView()
+                .tag(4)
+            
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         

@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct MicView: View {
+    
+    @State private var showPopUp: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Voice Recognition")
+            
+            Button(action: {
+                withAnimation(.linear(duration: 0.3)) {
+                    showPopUp.toggle()
+                }
+            }, label: {
+                Image(systemName: "mic")
+                    .foregroundColor(Color.white)
+            })
+                .padding()
+                .background(.blue)
+                .clipShape(Circle())
+            
+            MicPopUpView(show: $showPopUp)
+        }
+            
     }
 }
 
