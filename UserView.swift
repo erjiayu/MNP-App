@@ -8,18 +8,50 @@
 import SwiftUI
 
 struct UserView: View {
-    let profileLinkNames: [String] = ["Friends", "Tips", "Settings"]
+    let profileLinkNames: [String] = ["Profile", "Friends", "Tips"]
         
     var body: some View {
-        NavigationView {
-            VStack {
-                ForEach(profileLinkNames, id: \.self) { profileLinkName in
-                UserLink(profileLinkName: profileLinkName)
+        
+        VStack {
+            // profile pic
+            HStack{
+                Spacer()
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 250, height: 125)
+                Spacer()
             }
-            Spacer()
+            
+            VStack{
+                Text("Michael")
+                    .font(.title)
+                Text("User since 9/2021")
+                    .foregroundColor(Color.gray)
+            }
+            .offset(y:10)
+                        
+            // list of subpages
+            NavigationView {
+                VStack {
+                    ForEach(profileLinkNames, id: \.self) { profileLinkName in
+                    UserLink(profileLinkName: profileLinkName)
+                    }
+                Spacer()
+                }
+            }
+            
+            // comments section
+            HStack {
+                Text("Questions or Comments?")
+                    .foregroundColor(Color.gray)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(Color(.gray))
+            }
+            .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+            .offset(y:-50)
         }
-        .navigationBarTitle("Tara Yu")
-    }
+        .offset(y:50)
 }
 
 struct UserView_Previews: PreviewProvider {
@@ -44,6 +76,5 @@ struct UserLink: View {
                 Divider()
             }
         }
-        
     }
 }
